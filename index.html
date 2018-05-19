@@ -12138,7 +12138,7 @@
 		ninja.print = function () {
 
 			var doc = new jsPDF('p', 'in');
-			doc.setFont('arial'); //before courier, by Iago
+			doc.setFont('courier'); //before courier, by Iago
 			doc.setFontSize(12); //before 12, by Iago
 			doc.setLineWidth(0.01); //before 0.01, by Iago
 
@@ -12150,7 +12150,7 @@
 			var wallets = opw.paperwallet.wallet_details;
 
 			for(var p = 0; p < opw.paperwallet.numPages; p++){
-				doc.setFontSize(8); //before 5,by Iago
+				doc.setFontSize(5); //before 5, by Iago
 				for(var i=0; i<4; i++){
 					var alias = opw.paperwallet.wallet_details[i+1+p*4].alias;
 					var bitcoinAddress = opw.paperwallet.wallet_details[i+1+p*4].bitcoinAddress;
