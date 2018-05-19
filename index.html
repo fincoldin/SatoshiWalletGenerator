@@ -12138,9 +12138,9 @@
 		ninja.print = function () {
 
 			var doc = new jsPDF('p', 'in');
-			doc.setFont('courier'); //before courier, by Iago
-			doc.setFontSize(12); //before 12, by Iago
-			doc.setLineWidth(0.01); //before 0.01, by Iago
+			doc.setFont('courier'); 
+			doc.setFontSize(12); 
+			doc.setLineWidth(0.01); 
 
 			var pageMaxHeight = 11.7;
 			var pageMargin = 0.5;
@@ -12150,7 +12150,7 @@
 			var wallets = opw.paperwallet.wallet_details;
 
 			for(var p = 0; p < opw.paperwallet.numPages; p++){
-				doc.setFontSize(7); //before 5, by Iago
+				doc.setFontSize(7); //before was 5, by Iago
 				for(var i=0; i<4; i++){
 					var alias = opw.paperwallet.wallet_details[i+1+p*4].alias;
 					var bitcoinAddress = opw.paperwallet.wallet_details[i+1+p*4].bitcoinAddress;
@@ -12219,7 +12219,7 @@
 					doc.text(pageMargin+5.75+0.08, pageMargin+0.185+heightOffset+0.03, lines); // Print
 				}
 				
-				//if(p+1 < opw.paperwallet.numPages) doc.addPage();
+				if(p+1 < opw.paperwallet.numPages) doc.addPage(); //This if was commented out, so it did not work. By Iago
 			}
 			
 			doc.save('openpaperwallet.pdf');
